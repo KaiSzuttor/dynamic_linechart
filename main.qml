@@ -8,16 +8,23 @@ ApplicationWindow {
     visible: true
 
 
-    Button {
-        text: qsTr("Click me")
+    GridLayout {
+        id: gridLayout
+        rows: 3
+        columns: 2
+        flow: GridLayout.TopToBottom
+        anchors.fill: parent
+    }
+        Button {
+            text: qsTr("Create liveplot")
 
-        onClicked: {
-            var component = Qt.createComponent("child.qml")
-            if (component.status === Component.Ready)
-                var window = component.createObject(root);
-                if (window === null){
-                    console.log("Error creating image");
-                }
-        }
+            onClicked: {
+                var component = Qt.createComponent("child.qml")
+                if (component.status === Component.Ready)
+                    var window = component.createObject(gridLayout);
+                    if (window === null){
+                        console.log("Error creating image");
+                    }
+            }
     }
 }

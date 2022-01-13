@@ -6,9 +6,13 @@ import QtCharts 2.0
 import Generators
 
 ChartView {
-    title: "Line"
     antialiasing: true
-    anchors.fill: parent
+    height: 240
+    width: 360
+    margins.bottom: 0
+    margins.top: 0
+    margins.left: 0
+    margins.right: 0
 
     ValueAxis {
         id: axisX

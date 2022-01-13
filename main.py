@@ -3,7 +3,7 @@ import random
 
 from PySide6.QtWidgets import QApplication
 from PySide6.QtQml import QQmlApplicationEngine, qmlRegisterType
-from PySide6.QtCore import QTimer, QObject, Signal, Slot
+from PySide6.QtCore import QTimer, QObject, Signal
 
 
 class DataGenerator(QObject):
@@ -29,4 +29,5 @@ if __name__ == "__main__":
 
     engine.quit.connect(app.quit)
     engine.load('main.qml')
+
     sys.exit(app.exec())
